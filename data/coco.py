@@ -107,6 +107,7 @@ class COCO2014(Dataset):
         #download_coco2014(self.root, phase)
         self.get_anno()
         self.num_classes = len(self.cat2idx)
+        self.img_list=self.img_list[:1000]
         print('[dataset] COCO2014 classification phase={} number of classes={}  number of images={}'.format(phase, self.num_classes, len(self.img_list)))
 
     def get_anno(self):
