@@ -140,7 +140,7 @@ def make_data_loader(args, is_train=True):
     num_classes = val_dataset[0]['target'].size(-1)
     val_loader = DataLoader(val_dataset, batch_size=args.batch_size, shuffle=False, 
                             num_workers=args.num_workers, pin_memory=True, 
-                            collate_fn=collate_fn, drop_last=False)
+                            collate_fn=collate_fn, drop_last=True)
     
     if not is_train:
         return None, val_loader, num_classes
